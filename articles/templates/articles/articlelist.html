@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>s
     <meta charset="UTF-8">
     <title>articles</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -9,7 +9,7 @@
 <body>
 <h1>Article List</h1>
 {% for article in articles %}
-    <h2 style="color: red;font-size: 25px;"><a href="#">{{ article.title }}</a> </h2>
+    <h2 style="color: red;font-size: 25px;"><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a> </h2>
     <p>{{ article.snippet }}</p>
     <p>{{ article.date }}</p>
 {% endfor %}
